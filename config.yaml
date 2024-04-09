@@ -35,10 +35,8 @@ HEAD:
     - localhost.ptlogin2.qq.com
 TEST_URL: https://www.gstatic.com/generate_204
 RULESET:
-- - 🤖 ChatBot
-  - https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/Ruleset/OpenAi.list
-- - 🤖 ChatBot
-  - https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/Ruleset/ChatBot.list
+- - 💬 OpenAi
+  - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
 - - 🎯 全球直连
   - https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/LocalAreaNetwork.list
 - - 🎯 全球直连
@@ -112,28 +110,14 @@ RULESET:
 - - 🐟 漏网之鱼
   - '[]FINAL'
 CUSTOM_PROXY_GROUP:
+- name: 🚀 手动切换
+  type: select
+  manual: true
+  rule: false
 - name: ♻️ 自动选择
   type: url-test
   rule: false
-- name: 🚀 手动切换1
-  type: select
-  manual: true
-  rule: false
-- name: 🚀 手动切换2
-  type: select
-  manual: true
-  rule: false
-- name: 🔯 故障转移
-  type: fallback
-  rule: false
-- name: 🔮 负载均衡
-  type: load-balance
-  rule: false
-- name: 🔮 香港负载均衡
-  type: load-balance
-  rule: false
-  regex: 🇭🇰|HK|Hong|Kong|HGC|WTT|CMI|港
-- name: 🤖 ChatBot
+- name: 💬 OpenAi
   type: select
   prior: PROXY
 - name: 📲 电报消息
